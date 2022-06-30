@@ -3,10 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_favorite_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/ic_image_placeholder_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_about.xml" value="0.149" />
+        <entry key="app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.149" />
         <entry key="app/src/main/res/layout/activity_filmes_lista.xml" value="0.20923913043478262" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.46296296296296297" />
         <entry key="app/src/main/res/layout/filme_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/filmes_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/movie_item.xml" value="0.33" />
+        <entry key="app/src/main/res/menu/favorites_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.33" />
       </map>
     </option>
   </component>

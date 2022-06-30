@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">TheMovie</string>
+    <string name="app_name">The Movie</string>
+    <string name="favorites">Favorites</string>
+    <string name="search">Search</string>
+    <string name="delete_all">Delete All</string>
+    <string name="retry">Retry</string>
 </resources>

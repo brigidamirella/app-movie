@@ -1,43 +1,43 @@
 package com.example.themovie.ui.activity
 
 import android.os.Bundle
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.themovie.R
-import com.example.themovie.dao.FilmesDao
-import com.example.themovie.model.Filme
-import com.example.themovie.ui.recyclerview.adapter.ListaFilmesAdapter
-import com.example.themovie.webclient.RetroftInicializador
+import com.example.themovie.Services.MovieApiInterface
+import com.example.themovie.Services.MovieApiService
+import com.example.themovie.model.Movie
+import com.example.themovie.model.MovieResponse
+import com.example.themovie.ui.recyclerview.adapter.MovieAdapter
+import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
-class ListaFilmesActivity : AppCompatActivity(R.layout.activity_filmes_lista) {
-    private val dao = FilmesDao()
-    private val adapter = ListaFilmesAdapter(
-        context = this, filmes = dao.buscaTodos()
-    )
-
+class ListaFilmesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_filmes_lista)
-        title = "Lista de Filmes"
+        setContentView(R.layout.activity_main)
 
-        val RecyclerView = findViewById<RecyclerView>(R.id.recycler_filmes)
-        RecyclerView.adapter = ListaFilmesAdapter(
-            this, filmes = listOf(
-                Filme(nome = "Coração indomavel"),
-                Filme(nome = "narnia"),
-                Filme(nome = "amor verdadeiro")
-            )
-        )
-
-        val call = RetroftInicializador().filmesService.buscaFilmes()
-        val resposta: Response<List<Filme>> = call.execute()
-        resposta.body()?.let { filmes ->
-
+        rv_movies_list.layoutManager = LinearLayoutManager(this)
+        rv_movies_list.setHasFixedSize(true)
+        getMovieData { movies : List<Movie> ->
+            rv_movies_list.adapter = MovieAdapter(movies)
         }
+    }
 
+    private fun getMovieData(callback: (List<Movie>) -> Unit){
+        val apiService = MovieApiService.getInstance().create(MovieApiInterface::class.java)
+        apiService.getMovieList().enqueue(object : Callback<MovieResponse> {
+            override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
 
-        RecyclerView.layoutManager = LinearLayoutManager(this)
+            }
+
+            override fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
+                return callback(response.body()!!.movies)
+            }
+
+        })
     }
 }
