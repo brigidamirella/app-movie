@@ -14,17 +14,15 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setMovieData()
-
-
     }
 
     private fun setMovieData() {
         val bundle: Bundle? = intent.extras
         if (bundle != null) {
-            binding.movieTitle.text = bundle.getString("titulo", "")
-            binding.movieReleaseDate.text = bundle.getString("data")
-            binding.txtOverView.text = bundle.getString("descricao")
-            val linkImage = bundle.getString("imagem", "")
+            binding.movieTitle.text = bundle.getString("title", "")
+            binding.movieReleaseDate.text = bundle.getString("date")
+            binding.txtOverView.text = bundle.getString("overview")
+            val linkImage = bundle.getString("image", "")
             if (linkImage != "") {
                 Glide.with(this)
                     .load(IMAGE_BASE + linkImage)

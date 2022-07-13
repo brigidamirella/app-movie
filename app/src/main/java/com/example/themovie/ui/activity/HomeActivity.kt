@@ -11,28 +11,27 @@ import com.example.themovie.model.Movie
 import com.example.themovie.model.MovieResponse
 import com.example.themovie.ui.details.DetailActivity
 import com.example.themovie.ui.recyclerview.adapter.MovieAdapter
-import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ListaFilmesActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        rv_movies_list.layoutManager = LinearLayoutManager(this)
-        rv_movies_list.setHasFixedSize(true)
+        binding.rvMoviesList.layoutManager = LinearLayoutManager(this)
+        binding.rvMoviesList.setHasFixedSize(true)
         getMovieData { movies: List<Movie> ->
-            rv_movies_list.adapter = MovieAdapter(this, movies) {
+            binding.rvMoviesList.adapter = MovieAdapter(this, movies) {
                 val intent = Intent(this, DetailActivity::class.java)
                 val bundle = Bundle()
-                bundle.putString("titulo", it.title)
-                bundle.putString("data", it.release)
-                bundle.putString("descricao", it.overview)
-                bundle.putString("imagem", it.backdrop)
+                bundle.putString("title", it.title)
+                bundle.putString("date", it.release)
+                bundle.putString("overview", it.overview)
+                bundle.putString("image", it.backdrop)
                 intent.putExtras(bundle)
                 startActivity(intent)
             }

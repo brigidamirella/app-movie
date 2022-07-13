@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             app:menu="@menu/main_menu"
             app:title="The Movies"
-            app:titleTextColor="@color/purple_200">
+            android:background="@color/purple_900"
+           >
 
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>

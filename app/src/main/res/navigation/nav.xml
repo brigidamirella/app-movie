@@ -5,7 +5,7 @@
     android:id="@+id/nav">
 <activity
     android:id="@+id/listafilmes"
-    android:name="com.example.themovie.ui.activity.ListaFilmesActivity"
+    android:name="com.example.themovie.ui.activity.HomeActivity"
     android:label="Fragment_list"
     tools:layout="@layout/activity_main">
     <action
