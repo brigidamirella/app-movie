@@ -9,9 +9,9 @@ import retrofit2.http.Path
 
 interface MovieApiInterface {
 
-    @GET("movie/now_playing?api_key=458571bc66840f4d1764760ccce524e0")
+    @GET("movie/popular?api_key=458571bc66840f4d1764760ccce524e0")
     fun getMovieList(): Call<MovieResponse>
 
     @GET("movie/{id}?api_key=458571bc66840f4d1764760ccce524e0")
-    fun getMovieDetails(): Response<Movie>
+    fun getMovie(): Response<Movie>
 }

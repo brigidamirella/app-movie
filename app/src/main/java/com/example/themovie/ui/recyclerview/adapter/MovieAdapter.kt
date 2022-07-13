@@ -21,16 +21,14 @@ class MovieAdapter(
         private val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
 
         fun bindMovie(movie: Movie, onMovieClick: (Movie) -> Unit) {
-            itemView.movie_title.text = movie.title
-            itemView.movie_release_date.text = movie.release
+            binding.movieTitle.text = movie.title
+            binding.movieReleaseDate.text = movie.release
 
-            Glide.with(itemView).load(IMAGE_BASE + movie.poster).into(itemView.movie_poster)
+            Glide.with(itemView).load(IMAGE_BASE + movie.poster).into(binding.moviePoster)
             binding.root.setOnClickListener {
                 onMovieClick(movie)
             }
         }
-
-
 
 
     }
@@ -44,7 +42,6 @@ class MovieAdapter(
     override fun getItemCount(): Int = movies.size
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-
 
 
         holder.bindMovie(movies.get(position), onMovieClick)

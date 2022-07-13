@@ -15,7 +15,7 @@
         <entry key="app/src/main/res/layout/activity_movie_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout/filme_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/filmes_item.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.22" />
         <entry key="app/src/main/res/layout/movie_item.xml" value="0.33" />
         <entry key="app/src/main/res/menu/favorites_menu.xml" value="0.25" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.33" />

@@ -18,7 +18,7 @@ import retrofit2.Response
 
 class ListaFilmesActivity : AppCompatActivity() {
 
-private val binding by lazy {ActivityMainBinding.inflate(layoutInflater) }
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -28,6 +28,12 @@ private val binding by lazy {ActivityMainBinding.inflate(layoutInflater) }
         getMovieData { movies: List<Movie> ->
             rv_movies_list.adapter = MovieAdapter(this, movies) {
                 val intent = Intent(this, DetailActivity::class.java)
+                val bundle = Bundle()
+                bundle.putString("titulo", it.title)
+                bundle.putString("data", it.release)
+                bundle.putString("descricao", it.overview)
+                bundle.putString("imagem", it.backdrop)
+                intent.putExtras(bundle)
                 startActivity(intent)
             }
         }
