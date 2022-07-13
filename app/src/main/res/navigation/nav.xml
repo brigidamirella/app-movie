@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav">
+<activity
+    android:id="@+id/listafilmes"
+    android:name="com.example.themovie.ui.activity.ListaFilmesActivity"
+    android:label="Fragment_list"
+    tools:layout="@layout/activity_main">
+    <action
+        app:destination="@+id/details"
+        />
+</activity>
 
+    <activity
+        android:id="@+id/details"
+        android:name="com.example.themovie.ui.details.DetailActivity"
+        android:label="Fragment_details"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="SelectedMovie"
+            app:argType="" />
+    </activity>
 </navigation>
