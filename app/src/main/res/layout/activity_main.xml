@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             app:menu="@menu/main_menu"
             app:title="The Movies"
+
             android:background="@color/purple_900"
            >
 
@@ -43,7 +44,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Lista de Filmes"
+
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />

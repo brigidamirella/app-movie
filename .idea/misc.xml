@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_error.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/ic_favorite_red.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_favorite_white.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_favorites.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_filmes_lista.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_movie_details.xml" value="0.1" />
