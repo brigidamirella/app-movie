@@ -22,9 +22,6 @@ class MovieApiService {
             }
             return retrofit!!
         }
-
-
     }
-
 
 }
