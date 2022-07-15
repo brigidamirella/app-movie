@@ -2,6 +2,7 @@ package com.example.themovie.ui.details
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.themovie.databinding.FragmentDetailBinding
 import kotlinx.android.synthetic.main.fragment_detail.*
@@ -9,14 +10,15 @@ import kotlinx.android.synthetic.main.fragment_detail.*
 
 class DetailActivity : AppCompatActivity() {
 
+    private lateinit var viewModel: DetailViewModel
     private val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
     private val binding by lazy { FragmentDetailBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
         setContentView(binding.root)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         setMovieData()
     }
 
