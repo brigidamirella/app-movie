@@ -13,5 +13,5 @@ interface MovieApiInterface {
     fun getMovieList(): Call<MovieResponse>
 
     @GET("movie/{id}?api_key=458571bc66840f4d1764760ccce524e0")
-    fun getMovie(): Response<Movie>
+    fun getMovie(movieId: Int): Response<Movie>
 }

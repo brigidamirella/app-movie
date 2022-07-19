@@ -1,4 +1,4 @@
-package com.example.themovie.ui.activity
+package com.example.themovie.ui.Favorites
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

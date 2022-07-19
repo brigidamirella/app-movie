@@ -4,20 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavDirections
-import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.themovie.R
 import com.example.themovie.api.MovieApiInterface
 import com.example.themovie.api.MovieApiService
+import com.example.themovie.data.local.AppDataBase
 import com.example.themovie.databinding.ActivityMainBinding
 import com.example.themovie.model.Movie
 import com.example.themovie.model.MovieResponse
+import com.example.themovie.ui.Favorites.FavoritesActivity
 import com.example.themovie.ui.details.DetailActivity
 import com.example.themovie.ui.recyclerview.adapter.MovieAdapter
-import kotlinx.android.synthetic.main.activity_main.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,6 +41,8 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -64,6 +64,7 @@ class HomeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
 
     }
+
 
     private fun getMovieData(callback: (List<Movie>) -> Unit) {
         val apiService = MovieApiService.getInstance().create(MovieApiInterface::class.java)

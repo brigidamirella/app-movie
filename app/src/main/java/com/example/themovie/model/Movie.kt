@@ -5,7 +5,7 @@ import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@Entity
+@Entity(tableName = "movie")
 @Parcelize
 data class Movie(
     @SerializedName("id")
@@ -24,8 +24,9 @@ data class Movie(
     val release: String?,
 
     @SerializedName("overview")
-    val overview: String?
+    val overview: String?,
 
+    var isFavorites: Boolean = false
 ) : Parcelable {
     constructor() : this("", "", "", "", "", "")
 }
