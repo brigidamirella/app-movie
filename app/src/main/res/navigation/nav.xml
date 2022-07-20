@@ -24,7 +24,7 @@
 
     <activity
         android:id="@+id/favoritesActivity"
-        android:name="com.example.themovie.ui.activity.FavoritesActivity"
+        android:name="com.example.themovie.ui.Favorites.FavoritesActivity"
         tools:layout="@layout/activity_favorites"
         >
         <action app:destination="@id/detailsActivity" />

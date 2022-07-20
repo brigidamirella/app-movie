@@ -1,15 +1,21 @@
 package com.example.themovie.ui.details
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.themovie.data.local.AppDataBase
 import com.example.themovie.databinding.FragmentDetailBinding
+import com.example.themovie.model.Movie
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 
 class DetailActivity : AppCompatActivity() {
 
+    private lateinit var theMovieDetail: Movie
     private lateinit var viewModel: DetailViewModel
     private val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
     private val binding by lazy { FragmentDetailBinding.inflate(layoutInflater) }
@@ -20,6 +26,8 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setMovieData()
+
+
     }
 
     private fun setMovieData() {
@@ -35,10 +43,8 @@ class DetailActivity : AppCompatActivity() {
                     .centerCrop()
                     .into(binding.moviePoster)
             }
-
         }
     }
-
 }
 
 
