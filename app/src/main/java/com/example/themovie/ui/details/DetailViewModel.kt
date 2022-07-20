@@ -14,7 +14,8 @@ class DetailViewModel(application: Application) : AndroidViewModel(application) 
 
     private val repository = MovieRepositoryImp(application)
 
-    val theMovieDetail: MutableLiveData<Resource<Movie>> = MutableLiveData()
+    val movie: MutableLiveData<Resource<Movie>> = MutableLiveData()
+
     fun addMovieDetailToFavorites(movie: Movie) {
         viewModelScope.launch {
             repository.addMovieToFavorites(movie)

@@ -1,7 +1,9 @@
 package com.example.themovie.model
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
@@ -9,7 +11,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Movie(
     @SerializedName("id")
-    val id: String?,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
 
     @SerializedName("title")
     val title: String?,
@@ -28,5 +30,5 @@ data class Movie(
 
     var isFavorites: Boolean = false
 ) : Parcelable {
-    constructor() : this("", "", "", "", "", "")
+
 }

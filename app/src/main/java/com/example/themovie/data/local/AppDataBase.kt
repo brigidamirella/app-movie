@@ -18,7 +18,8 @@ abstract class AppDataBase : RoomDatabase() {
                 INSTANCE = Room.databaseBuilder(
                     context,
                     AppDataBase::class.java, "moviedb"
-                ).build()
+                ).allowMainThreadQueries()
+                    .build()
             }
             return INSTANCE
         }

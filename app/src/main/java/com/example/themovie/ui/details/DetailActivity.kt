@@ -3,8 +3,10 @@ package com.example.themovie.ui.details
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.themovie.data.local.AppDataBase
 import com.example.themovie.databinding.FragmentDetailBinding
 import com.example.themovie.model.Movie
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,6 +26,8 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setMovieData()
+
+
     }
 
     private fun setMovieData() {

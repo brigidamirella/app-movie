@@ -8,7 +8,7 @@ import com.example.themovie.model.Movie
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class MovieRepositoryImp(context: Context) : MovieRepository {
+class MovieRepositoryImp(context: Context) : MovieRepository{
     private lateinit var dao: TheMoviesDao
     private val database = AppDataBase.getDataBase(context).dao()
 
@@ -20,11 +20,11 @@ class MovieRepositoryImp(context: Context) : MovieRepository {
         dao.getMovieDetail(movieId)
     }
 
-    override suspend fun deleteMovieFromFavorites(movie: Movie) {
+     override suspend fun deleteMovieFromFavorites(movie: Movie) {
         dao.deleteMovie(movie)
     }
 
-    override suspend fun getAllFavoritesMovies(): Flow<List<Movie>> = flow {
+     override suspend fun getAllFavoritesMovies(): Flow<List<Movie>> = flow {
         val theSavedMovies = dao.getAllMovies()
         val theMovieList = theSavedMovies.map { it }
         emit(theMovieList)
