@@ -16,14 +16,16 @@ class MovieRepositoryImp(context: Context) : MovieRepository{
         dao.insertMovieDetail(movie)
     }
 
-    override suspend fun getMovieFromFavorites(movieId: Int) {
+    override suspend fun getMovieFromFavorites(movieId: Long) {
         dao.getMovieDetail(movieId)
     }
 
      override suspend fun deleteMovieFromFavorites(movie: Movie) {
         dao.deleteMovie(movie)
     }
-
+    override suspend fun deleteAllFavoritesMovies() {
+        dao.deleteAllMoviesDetail()
+    }
      override suspend fun getAllFavoritesMovies(): Flow<List<Movie>> = flow {
         val theSavedMovies = dao.getAllMovies()
         val theMovieList = theSavedMovies.map { it }
