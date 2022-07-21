@@ -17,6 +17,7 @@ import com.example.themovie.model.MovieResponse
 import com.example.themovie.ui.Favorites.FavoritesActivity
 import com.example.themovie.ui.details.DetailActivity
 import com.example.themovie.ui.recyclerview.adapter.MovieAdapter
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -73,7 +74,6 @@ class HomeActivity : AppCompatActivity() {
             R.id.action_favorites -> {
                 Intent(this, FavoritesActivity::class.java)
                     .apply {
-
                         startActivity(this)
                     }
             }

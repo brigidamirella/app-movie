@@ -11,7 +11,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Movie(
     @SerializedName("id")
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    @PrimaryKey(autoGenerate = true) val id: Long= 0,
 
     @SerializedName("title")
     val title: String?,
@@ -30,5 +30,4 @@ data class Movie(
 
     var isFavorites: Boolean = false
 ) : Parcelable {
-
 }

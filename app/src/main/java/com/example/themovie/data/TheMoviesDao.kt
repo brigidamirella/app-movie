@@ -1,5 +1,6 @@
 package com.example.themovie.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.themovie.model.Movie
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +14,7 @@ interface TheMoviesDao {
     suspend fun insertAllMovie(movies: List<Movie>)
 
     @Query("SELECT * from movie WHERE id=:movieId")
-    suspend fun getMovieDetail(movieId: Int): Movie
+    suspend fun getMovieDetail(movieId: Long): Movie
 
     @Query("SELECT * from movie")
     suspend fun getAllMovies(): List<Movie>
@@ -23,6 +24,8 @@ interface TheMoviesDao {
 
     @Delete
     suspend fun deleteMovie(movie: Movie)
+    @Query("DELETE FROM movie")
+    suspend fun deleteAllMoviesDetail()
 
     @Query("DELETE FROM Movie")
     suspend fun deleteAllMovies()
